@@ -85,7 +85,8 @@ jobs:
         uses: softprops/action-gh-release@v2
 
         with:
-
+          tag_name: test-release
+          name: Test Releases
           files: release-files/**
 
         env:

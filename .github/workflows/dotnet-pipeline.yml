@@ -1,4 +1,4 @@
-name: DotNet CI + Release Deploy
+name: DotNet CI + Tagged Release
 
 on:
 
@@ -67,6 +67,7 @@ jobs:
 
     needs: build
 
+    if: startsWith(github.ref, 'refs/tags/')
 
     steps:
 
@@ -85,8 +86,7 @@ jobs:
         uses: softprops/action-gh-release@v2
 
         with:
-          tag_name: test-release
-          name: Test Releases
+
           files: release-files/**
 
         env:

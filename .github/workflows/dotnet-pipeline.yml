@@ -67,7 +67,6 @@ jobs:
 
     needs: build
 
-    if: startsWith(github.ref, 'refs/tags/')
 
     steps:
 
